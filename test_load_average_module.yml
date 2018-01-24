@@ -1,0 +1,15 @@
+---
+- name: Display load average on a host
+
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+  - name: Display the load average on a host
+    load_average:
+    register: result
+
+  - name: Display load average result
+    debug: var=result.message
+
